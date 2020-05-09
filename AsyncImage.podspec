@@ -1,14 +1,14 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "AsyncImage"
-  spec.version      = "0.0.1"
+  spec.version      = "0.1.0"
   spec.summary      = "Yet another SwifUI async image view."
 
   spec.description  = <<-DESC
   A SwiftUI Image component that can download images from the internet through the URL
                    DESC
 
-  spec.homepage     = "https://amarantedaniel.com"
+  spec.homepage     = "https://github.com/amarantedaniel/AsyncImage"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author       = { "amarantedaniel" => "daniel.amarante2@gmail.com" }
 
