@@ -1,12 +1,16 @@
 import Combine
 import SwiftUI
 
-public struct AsyncImage<Placeholder: View>: View {
+public struct AsyncImage<Placeholder: View, ActivityIndicator: View>: View {
     @ObservedObject private var loader = ImageLoader()
     let placeholder: Placeholder
+    let activityIndicator: ActivityIndicator
 
-    public init(_ url: URL?, @ViewBuilder placeholder: () -> Placeholder) {
+    public init(_ url: URL?,
+                @ViewBuilder placeholder: () -> Placeholder,
+                @ViewBuilder activityIndicator: () -> ActivityIndicator) {
         self.placeholder = placeholder()
+        self.activityIndicator = activityIndicator()
         loader.url = url
     }
 
@@ -17,7 +21,7 @@ public struct AsyncImage<Placeholder: View>: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit))
         case (nil, _?):
-            return AnyView(placeholder)
+            return AnyView(activityIndicator)
         case (nil, nil):
             return AnyView(placeholder)
         }

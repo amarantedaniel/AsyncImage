@@ -1,16 +1,12 @@
-//
-//  ContentView.swift
-//  AsyncImageDemo
-//
-//  Created by Daniel Amarante on 5/9/20.
-//  Copyright © 2020 Tigerhood. All rights reserved.
-//
-
+import AsyncImage
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        AsyncImage(URL(string: "https://picsum.photos/200/300"),
+                   placeholder: { Text("No Image") },
+                   activityIndicator: { Text("Loading...") })
+            .padding()
     }
 }
 
