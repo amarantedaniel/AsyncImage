@@ -16,6 +16,7 @@
 		98D6E82924674FB8001329EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98D6E82824674FB8001329EB /* Assets.xcassets */; };
 		98D6E82C24674FB8001329EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98D6E82B24674FB8001329EB /* Preview Assets.xcassets */; };
 		98D6E82F24674FB8001329EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D6E82D24674FB8001329EB /* LaunchScreen.storyboard */; };
+		98D6E835246750C2001329EB /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6E834246750C2001329EB /* AsyncImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		98D6E82B24674FB8001329EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98D6E82E24674FB8001329EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98D6E83024674FB8001329EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98D6E834246750C2001329EB /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				98D6E80524674F39001329EB /* AsyncImage.h */,
 				98D6E80624674F39001329EB /* Info.plist */,
+				98D6E834246750C2001329EB /* AsyncImage.swift */,
 			);
 			path = AsyncImage;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				TargetAttributes = {
 					98D6E80124674F38001329EB = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 					98D6E80A24674F39001329EB = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -271,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D6E835246750C2001329EB /* AsyncImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +442,7 @@
 		98D6E81724674F39001329EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = ZX7GUMJ35C;
@@ -453,6 +459,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerhood.AsyncImage;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -461,6 +468,7 @@
 		98D6E81824674F39001329EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = ZX7GUMJ35C;
@@ -485,6 +493,7 @@
 		98D6E81A24674F39001329EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZX7GUMJ35C;
 				INFOPLIST_FILE = AsyncImageTests/Info.plist;
@@ -503,6 +512,7 @@
 		98D6E81B24674F39001329EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZX7GUMJ35C;
 				INFOPLIST_FILE = AsyncImageTests/Info.plist;
