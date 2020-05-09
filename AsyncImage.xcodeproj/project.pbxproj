@@ -17,6 +17,8 @@
 		98D6E82C24674FB8001329EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98D6E82B24674FB8001329EB /* Preview Assets.xcassets */; };
 		98D6E82F24674FB8001329EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D6E82D24674FB8001329EB /* LaunchScreen.storyboard */; };
 		98D6E835246750C2001329EB /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6E834246750C2001329EB /* AsyncImage.swift */; };
+		98D6E83724675D53001329EB /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6E83624675D53001329EB /* ImageLoader.swift */; };
+		98D6E83924675DD5001329EB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6E83824675DD5001329EB /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		98D6E82E24674FB8001329EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98D6E83024674FB8001329EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98D6E834246750C2001329EB /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		98D6E83624675D53001329EB /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		98D6E83824675DD5001329EB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				98D6E80524674F39001329EB /* AsyncImage.h */,
 				98D6E80624674F39001329EB /* Info.plist */,
 				98D6E834246750C2001329EB /* AsyncImage.swift */,
+				98D6E83624675D53001329EB /* ImageLoader.swift */,
+				98D6E83824675DD5001329EB /* ImageCache.swift */,
 			);
 			path = AsyncImage;
 			sourceTree = "<group>";
@@ -275,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D6E83924675DD5001329EB /* ImageCache.swift in Sources */,
+				98D6E83724675D53001329EB /* ImageLoader.swift in Sources */,
 				98D6E835246750C2001329EB /* AsyncImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
