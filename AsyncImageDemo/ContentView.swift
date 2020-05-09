@@ -2,11 +2,16 @@ import AsyncImage
 import SwiftUI
 
 struct ContentView: View {
+    @State var text = "https://picsum.photos/200/300"
     var body: some View {
-        AsyncImage(URL(string: "https://picsum.photos/200/300"),
-                   placeholder: { Text("No Image") },
-                   activityIndicator: { Text("Loading...") })
-            .padding()
+        VStack(alignment: .center) {
+            AsyncImage(URL(string: text),
+                       placeholder: { Text("URL is nil or invalid") },
+                       activityIndicator: { Text("Loading...") })
+
+            Spacer()
+            TextField("Add a url", text: $text)
+        }.padding()
     }
 }
 
