@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "AsyncImage"
-  spec.version      = "0.1.0"
+  spec.version      = "0.1.1"
   spec.summary      = "Yet another SwifUI async image view."
 
   spec.description  = <<-DESC
