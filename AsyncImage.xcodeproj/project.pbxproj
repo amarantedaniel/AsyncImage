@@ -36,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		98777F3A24684AA8005AF472 /* ImageLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderTests.swift; sourceTree = "<group>"; };
+		98A82CBF2468638800AAD67C /* AsyncImageDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AsyncImageDemo.entitlements; sourceTree = "<group>"; };
 		98D6E80224674F38001329EB /* AsyncImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AsyncImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D6E80524674F39001329EB /* AsyncImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncImage.h; sourceTree = "<group>"; };
 		98D6E80624674F39001329EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 		98D6E82124674FB7001329EB /* AsyncImageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				98A82CBF2468638800AAD67C /* AsyncImageDemo.entitlements */,
 				98D6E82224674FB7001329EB /* AppDelegate.swift */,
 				98D6E82424674FB7001329EB /* SceneDelegate.swift */,
 				98D6E82624674FB7001329EB /* ContentView.swift */,
@@ -576,6 +578,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AsyncImageDemo/AsyncImageDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AsyncImageDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = ZX7GUMJ35C;
@@ -587,6 +590,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerhood.AsyncImageDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -596,6 +600,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AsyncImageDemo/AsyncImageDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AsyncImageDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = ZX7GUMJ35C;
@@ -607,6 +612,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerhood.AsyncImageDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
