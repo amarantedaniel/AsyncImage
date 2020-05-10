@@ -1,13 +1,24 @@
 import SwiftUI
 
 public struct AsyncImage<Placeholder: View, ActivityIndicator: View>: View {
-    @ObservedObject private var loader = ImageLoader()
+    @ObservedObject private var loader: ImageLoader
     let placeholder: Placeholder
     let activityIndicator: ActivityIndicator
-
+    
+    public init(_ url: URL?,
+                cache: ImageCache,
+                @ViewBuilder placeholder: () -> Placeholder,
+                @ViewBuilder activityIndicator: () -> ActivityIndicator) {
+        self.loader = ImageLoader(cache: cache)
+        self.placeholder = placeholder()
+        self.activityIndicator = activityIndicator()
+        loader.url = url
+    }
+    
     public init(_ url: URL?,
                 @ViewBuilder placeholder: () -> Placeholder,
                 @ViewBuilder activityIndicator: () -> ActivityIndicator) {
+        self.loader = ImageLoader()
         self.placeholder = placeholder()
         self.activityIndicator = activityIndicator()
         loader.url = url

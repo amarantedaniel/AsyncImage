@@ -8,7 +8,6 @@ struct ContentView: View {
             AsyncImage(URL(string: text),
                        placeholder: { Text("URL is nil or invalid") },
                        activityIndicator: { Text("Loading...") })
-
             Spacer()
             TextField("Add a url", text: $text)
         }.padding()

@@ -8,7 +8,8 @@ class ImageLoader: ObservableObject {
     private let service: ImageFetchingService
     private var cancellables = Set<AnyCancellable>()
 
-    init(cache: ImageCache = DefaultImageCache.shared, service: ImageFetchingService = DefaultImageFetchingService()) {
+    init(cache: ImageCache = DefaultImageCache.shared,
+         service: ImageFetchingService = DefaultImageFetchingService()) {
         self.cache = cache
         self.service = service
         $url
@@ -27,7 +28,6 @@ class ImageLoader: ObservableObject {
     func load(url: URL) {
         service
             .fetch(url: url)
-            .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] image in
                 self?.image = image
                 self?.cache.set(url: url, image: image)
@@ -35,4 +35,3 @@ class ImageLoader: ObservableObject {
             .store(in: &cancellables)
     }
 }
-
