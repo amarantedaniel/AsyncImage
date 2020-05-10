@@ -55,6 +55,30 @@ class ImageLoaderTests: XCTestCase {
         XCTAssertEqual(service.calls, [])
         XCTAssertEqual(sut.image, image)
     }
+
+    func testImageLoader_WhenUrlIsNull_ShouldNotDoAnything() {
+        // when
+        sut.url = nil
+
+        // then
+        XCTAssertEqual(service.calls, [])
+        XCTAssertEqual(cache.cache, [:])
+        XCTAssertNil(sut.image)
+    }
+
+    func testImageLoader_WhenReturnedImageIsNil_ShouldSetImageToNil() {
+        // given
+        let url = URL(string: "http://example.com/image.png")!
+        service.publisher = Result<UIImage?, Never>.success(nil).publisher
+
+        // when
+        sut.url = url
+        
+        // then
+        XCTAssertEqual(service.calls, [url])
+        XCTAssertEqual(cache.cache[url], nil)
+        XCTAssertNil(sut.image)
+    }
 }
 
 private class FakeCache: ImageCache {
@@ -71,7 +95,7 @@ private class FakeCache: ImageCache {
 
 private class MockImageFetchingService: ImageFetchingService {
     var publisher: Result<UIImage?, Never>.Publisher?
-    private (set) var calls: [URL] = []
+    private(set) var calls: [URL] = []
     func fetch(url: URL) -> AnyPublisher<UIImage?, Never> {
         calls.append(url)
         return publisher!.eraseToAnyPublisher()
