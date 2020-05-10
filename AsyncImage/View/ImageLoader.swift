@@ -4,11 +4,13 @@ import UIKit
 class ImageLoader: ObservableObject {
     @Published var image: UIImage?
     @Published var url: URL?
-    private var cache: ImageCache
+    private let cache: ImageCache
+    private let service: ImageFetchingService
     private var cancellables = Set<AnyCancellable>()
 
-    init(cache: ImageCache = DefaultImageCache.shared) {
+    init(cache: ImageCache = DefaultImageCache.shared, service: ImageFetchingService = DefaultImageFetchingService()) {
         self.cache = cache
+        self.service = service
         $url
             .removeDuplicates()
             .compactMap { $0 }
@@ -23,9 +25,8 @@ class ImageLoader: ObservableObject {
     }
 
     func load(url: URL) {
-        URLSession.shared.dataTaskPublisher(for: url)
-            .map { UIImage(data: $0.data) }
-            .replaceError(with: nil)
+        service
+            .fetch(url: url)
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] image in
                 self?.image = image
@@ -34,3 +35,4 @@ class ImageLoader: ObservableObject {
             .store(in: &cancellables)
     }
 }
+

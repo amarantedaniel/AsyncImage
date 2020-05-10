@@ -19,6 +19,9 @@
 		98D6E835246750C2001329EB /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6E834246750C2001329EB /* AsyncImage.swift */; };
 		98D6E83724675D53001329EB /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6E83624675D53001329EB /* ImageLoader.swift */; };
 		98D6E83924675DD5001329EB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6E83824675DD5001329EB /* ImageCache.swift */; };
+		98D6E83C24678581001329EB /* ImageFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6E83B24678581001329EB /* ImageFetchingService.swift */; };
+		98D6E83E24678590001329EB /* DefaultImageFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6E83D24678590001329EB /* DefaultImageFetchingService.swift */; };
+		98D6E84224678666001329EB /* DefaultImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D6E84124678666001329EB /* DefaultImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		98D6E834246750C2001329EB /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		98D6E83624675D53001329EB /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		98D6E83824675DD5001329EB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		98D6E83B24678581001329EB /* ImageFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchingService.swift; sourceTree = "<group>"; };
+		98D6E83D24678590001329EB /* DefaultImageFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageFetchingService.swift; sourceTree = "<group>"; };
+		98D6E84124678666001329EB /* DefaultImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +106,11 @@
 		98D6E80424674F38001329EB /* AsyncImage */ = {
 			isa = PBXGroup;
 			children = (
+				98D6E84024678653001329EB /* Cache */,
+				98D6E83F2467863C001329EB /* View */,
+				98D6E83A24678572001329EB /* Service */,
 				98D6E80524674F39001329EB /* AsyncImage.h */,
 				98D6E80624674F39001329EB /* Info.plist */,
-				98D6E834246750C2001329EB /* AsyncImage.swift */,
-				98D6E83624675D53001329EB /* ImageLoader.swift */,
-				98D6E83824675DD5001329EB /* ImageCache.swift */,
 			);
 			path = AsyncImage;
 			sourceTree = "<group>";
@@ -138,6 +144,33 @@
 				98D6E82B24674FB8001329EB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		98D6E83A24678572001329EB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				98D6E83B24678581001329EB /* ImageFetchingService.swift */,
+				98D6E83D24678590001329EB /* DefaultImageFetchingService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		98D6E83F2467863C001329EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98D6E83624675D53001329EB /* ImageLoader.swift */,
+				98D6E834246750C2001329EB /* AsyncImage.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		98D6E84024678653001329EB /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				98D6E83824675DD5001329EB /* ImageCache.swift */,
+				98D6E84124678666001329EB /* DefaultImageCache.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D6E84224678666001329EB /* DefaultImageCache.swift in Sources */,
 				98D6E83924675DD5001329EB /* ImageCache.swift in Sources */,
+				98D6E83C24678581001329EB /* ImageFetchingService.swift in Sources */,
 				98D6E83724675D53001329EB /* ImageLoader.swift in Sources */,
+				98D6E83E24678590001329EB /* DefaultImageFetchingService.swift in Sources */,
 				98D6E835246750C2001329EB /* AsyncImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
